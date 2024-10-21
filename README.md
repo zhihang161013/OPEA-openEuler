@@ -16,7 +16,7 @@ To get started you need the right hardware and basic software setup.
 * Hardware Requirements: For the hardware configuration, If you need Hardware Access visit the [Intel Tiber Developer Cloud](https://www.intel.com/content/www/us/en/developer/tools/devcloud/services.html) to select from options such as Xeon or Gaudi processors that meet the necessary specifications.
 * Software Requirements: Refer to the [Support Matrix](https://opea-project.github.io/latest/GenAIExamples/README.html#getting-started) to ensure you have the required software components in place.
 
-For simplicity, we select the Amazon EC2 M7i or M7i-flex instance type here.
+For simplicity, we choose the Amazon EC2 M7i or M7i-flex instance type here.
 ## Quick Start Deployment Steps:
 Quick Start Deployment Steps:
 
