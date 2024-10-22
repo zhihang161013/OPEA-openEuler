@@ -19,7 +19,7 @@ It covers all scenarios of digital facilities, and empowers enterprises to devel
 4. Within the instance type list, select the Amazon EC2 M7i or M7i-flex instance type. Complete the remaining configuration as needed. Then, click the **Launch Instance** button.
 ![configure instance](./pics/configure-instance.png)
 
-Now we have an openEuler cloud instance that fufills the hardware requirements for deploying ChatQnA services.
+Now we have an openEuler cloud instance that fufills the hardware requirements for deploying the ChatQnA services.
 
 ## Deploying the ChatQnA services
 ### 1. Setup Environment Variable
