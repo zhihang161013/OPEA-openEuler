@@ -2,31 +2,27 @@
 OPEA (Open Platform for Enterprise AI) is a framework that enables the creation and evaluation of open, multi-provider, robust, and composable generative AI (GenAI) solutions. 
 It harnesses the best innovations across the ecosystem while keeping enterprise-level needs front and center.
 
-OpenEuler is an open source, free Linux distribution platform. 
-The platform provides an open community for global developers to build an open, diversified, and architecture-inclusive software ecosystem. 
-OpenEuler is also an innovative platform that encourages everyone to propose new ideas, explore new approaches, and practice new solutions.
+OpenEuler is an open source OS oriented to digital infrastructure that fits into any server, cloud computing, edge computing, and embedded deployment.
+The openEuler community works with global developers to build an open, diversified, and architecture-inclusive software ecosystem. 
+It covers all scenarios of digital facilities, and empowers enterprises to develop their hardware and software as well as application ecosystems.
 
-Initially, OPEA was developed using Dockerfiles that rely on Debian-series base images.
-Now we have successfully validated that OPEA can also be developed from openEuler base images.
+## Getting started with openEuler on AWS
+1. Navigate to [AWS](https://aws.amazon.com/). Click the **services** button at the top right of the screen. Select **Compute** from the options available. Then, head to the **EC2** console to begin the process.
+![ec2 console](./pics/ec2-console.png)
 
-To illustrate, here’s a simplified guide on deploying a ChatQnA GenAIExample based on openEuler base images.
+2. Within the EC2 console, click the **AMI Catalog** button. Select **Community AMIs** from the options available. In the search bar, type "openEuler" to find the openEuler AMIs available in the community repository.
+![ami catalog](./pics/ami-catalog.png)
 
-## Prerequisites
-To get started you need the right hardware and basic software setup.
-* Hardware Requirements: For the hardware configuration, If you need Hardware Access visit the [Intel Tiber Developer Cloud](https://www.intel.com/content/www/us/en/developer/tools/devcloud/services.html) to select from options such as Xeon or Gaudi processors that meet the necessary specifications.
-* Software Requirements: Refer to the [Support Matrix](https://opea-project.github.io/latest/GenAIExamples/README.html#getting-started) to ensure you have the required software components in place.
+3. Select an openEuler AMI and click the **Launch Instance with AMI** button.
+![community amis](./pics/community-amis.png)
 
-For simplicity, we choose the Amazon EC2 M7i or M7i-flex instance type here.
-## Quick Start Deployment Steps:
-Quick Start Deployment Steps:
+4. Within the instance type list, select the Amazon EC2 M7i or M7i-flex instance type. Complete the remaining configuration as needed. Then, click the **Launch Instance** button.
+![configure instance](./pics/configure-instance.png)
 
+Now we have an openEuler cloud instance that fufills the hardware requirements for deploying ChatQnA services.
 
-* Set up the environment variables.
-* Run Docker Compose.
-* Validate Microservices.
-* Consume the ChatQnA Service
-
-### Quick Start: 1.Setup Environment Variable
+## Deploying the ChatQnA services
+### 1. Setup Environment Variable
 To set up environment variables for deploying ChatQnA services, follow these steps:
 
 1. Set the required environment variables:
@@ -48,7 +44,7 @@ export https_proxy="Your_HTTPs_Proxy"
 # on Xeon
 source ./set_env.sh
 ```
-### Quick Start: 2.Run Docker Compose
+### 2. Run Docker Compose
 ```shell
 docker compose -f compose_vllm.openeuler.yaml up -d
 ```
@@ -59,7 +55,7 @@ docker pull openeuler/chatqna:latest
 docker pull openeuler/chatqna-ui:latest
 ...
 ```
-### Quick Start: 3.Validate Microservices
+### 3. Validate Microservices
 Note, when verify the microservices by curl or API from remote client, please make sure the ports of the microservices are opened in the firewall of the cloud node.
 Follow the instructions to validate MicroServices.
 For details on how to verify the correctness of the response, refer to how-to-validate_service.
@@ -120,7 +116,7 @@ For details on how to verify the correctness of the response, refer to how-to-va
        "messages": "What is the revenue of Nike in 2023?"
        }'
    ```
-### QuickStart: 4.Consume the ChatQnA Service
+### 4. Consume the ChatQnA Service
 Once the services are up, open the following URL in your browser: http://{host_ip}:5173. 
 By default, the UI runs on port 80 internally. 
 If you prefer to use a different host port to access the frontend, you can modify the port mapping in the compose_vllm.openeuler.yaml file as shown below:
@@ -133,4 +129,4 @@ chaqna-ui-server:
 ```
 
 Here is an example of running ChatQnA:
-![running screenshot](./pics/running%20screenshot.png)
+![chatqna-ui](./pics/chatqna-ui.png)
