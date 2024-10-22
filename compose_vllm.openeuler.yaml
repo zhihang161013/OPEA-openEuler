@@ -25,7 +25,7 @@ services:
       TEI_ENDPOINT: ${TEI_EMBEDDING_ENDPOINT}
       HUGGINGFACEHUB_API_TOKEN: ${HUGGINGFACEHUB_API_TOKEN}
   tei-embedding-service:
-    image: openeuler/text-embeddings-inference-cpu:latest
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.5
     container_name: tei-embedding-server
     ports:
       - "6006:80"
@@ -75,7 +75,7 @@ services:
       HUGGINGFACEHUB_API_TOKEN: ${HUGGINGFACEHUB_API_TOKEN}
     restart: unless-stopped
   tei-reranking-service:
-    image: openeuler/text-embeddings-inference-cpu:latest
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.5
     container_name: tei-reranking-server
     ports:
       - "8808:80"
@@ -111,7 +111,7 @@ services:
       LANGCHAIN_PROJECT: "opea-reranking-service"
     restart: unless-stopped
   vllm_service:
-    image: openeuler/vllm:latest
+    image: ${REGISTRY:-opea}/vllm:${TAG:-latest}
     container_name: vllm-service
     ports:
       - "9009:80"
