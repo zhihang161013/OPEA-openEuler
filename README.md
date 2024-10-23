@@ -6,7 +6,7 @@ OpenEuler is an open source operating system oriented to digital infrastructure 
 The openEuler community works with global developers to build an open, diversified, and architecture-inclusive software ecosystem. 
 It covers all scenarios of digital facilities, and empowers enterprises to develop their hardware and software as well as application ecosystems.
 
-As the first AI-native open source operating system, openEuler offers robust support for AI development.
+As the first AI-native open source operating system, openEuler offers robust support for AI development, making it an ideal platform for OPEA.
 This document will provide you with a step-by-step guide to effortlessly deploy a ChatQnA GenAIExamples with an openEuler cloud instance.
 
 ## Getting started with openEuler on AWS
