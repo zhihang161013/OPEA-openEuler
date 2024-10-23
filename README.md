@@ -6,26 +6,51 @@ OpenEuler is an open source OS oriented to digital infrastructure that fits into
 The openEuler community works with global developers to build an open, diversified, and architecture-inclusive software ecosystem. 
 It covers all scenarios of digital facilities, and empowers enterprises to develop their hardware and software as well as application ecosystems.
 
+
+
 ## Getting started with openEuler on AWS
-1. Navigate to [AWS](https://aws.amazon.com/). Click the **services** button at the top right of the screen. Select **Compute** from the options available. Then, head to the **EC2** console to begin the process.
+### 1. Access to AWS EC2 Console
+Navigate to [AWS](https://aws.amazon.com/). Click the **services** button at the top right of the screen. Select **Compute** from the options available. Then, head to the **EC2** console to begin the process.
 ![ec2 console](./pics/ec2-console.png)
 
-2. Within the EC2 console, click the **AMI Catalog** button. Select **Community AMIs** from the options available. In the search bar, type "openEuler" to find the openEuler AMIs available in the community repository.
+### 2. Find the openEuler AMI 
+Within the EC2 console, click the **AMI Catalog** button. Select **Community AMIs** from the options available. In the search bar, type "openEuler" to find the openEuler AMIs available in the community repository.
 ![ami catalog](./pics/ami-catalog.png)
 
-3. Select an openEuler AMI and click the **Launch Instance with AMI** button.
+Select the openEuler 24.03-LTS AMI and click the **Launch Instance with AMI** button.
 ![community amis](./pics/community-amis.png)
 
-4. Within the instance type list, select the Amazon EC2 M7i or M7i-flex instance type. Complete the remaining configuration as needed. Then, click the **Launch Instance** button.
+### 3. Launch the Instance 
+Within the instance type list, select the Amazon EC2 M7i or M7i-flex instance type. Complete the remaining configuration as needed. Then, click the **Launch Instance** button.
 ![configure instance](./pics/configure-instance.png)
 
-Now we have an openEuler cloud instance that fufills the hardware requirements for deploying the ChatQnA services.
+Now we have an openEuler cloud instance that fufills the hardware requirements for deploying ChatQnA services.
 
-## Deploying the ChatQnA services
+## Installing Docker and Docker Compose
+The ChatQnA service can be effortlessly deployed by using Docker and Docker Compose.
+
+### 1. Install Docker
+```shell
+yum update
+yum install docker
+```
+
+### 2. Install Docker Compose
+```shell
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL https://github.com/docker/compose/releases/download/v2.29.6/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+```
+### 3. Apply Executable Permissions to the Binary
+```shell
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+```
+
+## Deploying ChatQnA services
 ### 1. Setup Environment Variable
 To set up environment variables for deploying ChatQnA services, follow these steps:
 
-1. Set the required environment variables:
+1. Set the required environment variables
 ```shell
 # Example: host_ip="192.168.1.1"
 export host_ip="External_Public_IP"
@@ -34,12 +59,12 @@ export no_proxy="Your_No_Proxy"
 export HUGGINGFACEHUB_API_TOKEN="Your_Huggingface_API_Token"
 ```
 
-2. If you are in a proxy environment, also set the proxy-related environment variables:
+2. If you are in a proxy environment, also set the proxy-related environment variables
 ```shell
 export http_proxy="Your_HTTP_Proxy"
 export https_proxy="Your_HTTPs_Proxy"
 ```
-3. Set up other environment variables:
+3. Set up other environment variables
 ```shell
 # on Xeon
 source ./set_env.sh
