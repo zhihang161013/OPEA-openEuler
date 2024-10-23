@@ -6,7 +6,7 @@ OpenEuler is an open source OS oriented to digital infrastructure that fits into
 The openEuler community works with global developers to build an open, diversified, and architecture-inclusive software ecosystem. 
 It covers all scenarios of digital facilities, and empowers enterprises to develop their hardware and software as well as application ecosystems.
 
-
+This document will provide you with a step-by-step guide to effortlessly deploy a ChatQnA GenAIExamples with an openEuler cloud instance.
 
 ## Getting started with openEuler on AWS
 ### 1. Access to AWS EC2 Console
