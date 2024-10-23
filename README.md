@@ -2,7 +2,7 @@
 OPEA (Open Platform for Enterprise AI) is a framework that enables the creation and evaluation of open, multi-provider, robust, and composable generative AI (GenAI) solutions. 
 It harnesses the best innovations across the ecosystem while keeping enterprise-level needs front and center.
 
-OpenEuler is an open source operating system oriented to digital infrastructure that fits into any server, cloud computing, edge computing, and embedded deployment.
+openEuler is an open source operating system oriented to digital infrastructure that fits into any server, cloud computing, edge computing, and embedded deployment.
 The openEuler community works with global developers to build an open, diversified, and architecture-inclusive software ecosystem. 
 It covers all scenarios of digital facilities, and empowers enterprises to develop their hardware and software as well as application ecosystems.
 
