@@ -111,7 +111,7 @@ services:
       LANGCHAIN_PROJECT: "opea-reranking-service"
     restart: unless-stopped
   vllm_service:
-    image: openeuler/vllm-cpu:v0.6.3-oe2403lts
+    image: openeuler/vllm-cpu:0.6.3-oe2403lts
     container_name: vllm-service
     ports:
       - "9009:80"
